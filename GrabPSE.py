@@ -13,8 +13,8 @@ def getPSEStockData(ticker):
     content = requests.get(url)
     soup = BeautifulSoup(content.text, 'html.parser')
     table = soup.find('table', {"class": "table table-hover"})
+    st.text(table)
     data_frame = pd.read_html(str(table))[0]
-    st.text(data_frame)
     data_frame.drop(data_frame.tail(1).index, inplace=True)
 
     # Date column in DataFrame is converted to DateTime objects
