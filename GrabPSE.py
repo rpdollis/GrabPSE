@@ -28,7 +28,7 @@ def getPSEStockData(ticker):
 
 
 def main():
-    while True:
+    # while True:
         try:
             # print('===================================')
             st.text('===================================')
