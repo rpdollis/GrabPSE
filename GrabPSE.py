@@ -13,6 +13,7 @@ def getPSEStockData(ticker):
     content = requests.get(url)
     soup = BeautifulSoup(content.text, 'html.parser')
     table = soup.find('table', {"class": "table table-hover"})
+    st.text(table)
     data_frame = pd.read_html(str(table))[0]
     data_frame.drop(data_frame.tail(1).index, inplace=True)
 
