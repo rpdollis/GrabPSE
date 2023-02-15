@@ -29,7 +29,7 @@ def getPSEStockData(ticker):
 
 def main():
     # while True:
-        # try:
+        try:
             st.text('===================================')
             ticker = st.text_input('Ticker Symbol: ', '')
             st.text('===================================')
@@ -40,7 +40,7 @@ def main():
             rows = getPSEStockData(ticker)
             st.text(rows)
             # break
-        # except:
+        except:
             st.text('Please enter a valid ticker symbol.')
             
 #     print('===================================')
