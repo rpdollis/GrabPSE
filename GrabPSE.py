@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import streamlit as st
 
 # The getPSEStockData function scrapes data of off Investagrams.com,
 # converts the data into a dataframe,
@@ -29,20 +30,28 @@ def getPSEStockData(ticker):
 def main():
     while True:
         try:
-            print('===================================')
-            ticker = input('Ticker Symbol: ')
-            print('===================================')
-            print('PROCESSING')
-            print('===================================')
+            # print('===================================')
+            st.text('===================================')
+            # ticker = input('Ticker Symbol: ')
+            ticker = st.text_input('Ticker Symbol: ', 'TEL')
+            # print('===================================')
+            st.text('===================================')
+            # print('PROCESSING')
+            st.text('PROCESSING')
+            # print('===================================')
+            st.text('===================================')
             rows = getPSEStockData(ticker)
+            st.text(rows)
             break
         except:
-            print('Please enter a valid ticker symbol.')
-    print('===================================')
-    print('File has been saved as ' + ticker + '.csv.')
-    print('===================================')
-    print('Days Exported: ' + str(rows))
-    print('===================================')
+            # print('Please enter a valid ticker symbol.')
+            st.text('Please enter a valid ticker symbol.')
+            
+#     print('===================================')
+#     print('File has been saved as ' + ticker + '.csv.')
+#     print('===================================')
+#     print('Days Exported: ' + str(rows))
+#     print('===================================')
 
 
 if __name__ == "__main__":
