@@ -37,6 +37,7 @@ def main():
             st.text('===================================')
             rows = getPSEStockData(ticker)
             st.text(rows)
+            st.text(ticker)
             # break
         except:
             st.text('Please enter a valid ticker symbol.')
