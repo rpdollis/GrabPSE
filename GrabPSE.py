@@ -33,7 +33,7 @@ def main():
             # print('===================================')
             st.text('===================================')
             # ticker = input('Ticker Symbol: ')
-            ticker = st.text_input('Ticker Symbol: ', 'TEL')
+            ticker = st.text_input('Ticker Symbol: ', '')
             # print('===================================')
             st.text('===================================')
             # print('PROCESSING')
