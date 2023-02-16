@@ -9,8 +9,7 @@ import streamlit as st
 
 def getPSEStockData(ticker):
     # Data is scraped of off Investagrams.com depending on specified ticker symbol
-    # url = ('https://www.investagrams.com/Stock/PSE:' + ticker)
-    url = ('https://ph.investing.com/equities/globe-telecom-historical-data')
+    url = ('https://www.investagrams.com/Stock/PSE:' + ticker)
     content = requests.get(url)
     soup = BeautifulSoup(content.text, 'html.parser')
     st.text(soup)
