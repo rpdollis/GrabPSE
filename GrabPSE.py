@@ -9,10 +9,11 @@ import streamlit as st
 
 def getPSEStockData(ticker):
     # Data is scraped of off Investagrams.com depending on specified ticker symbol
-    url = ('https://www.investagrams.com/Stock/PSE:' + ticker)
+    # url = ('https://www.investagrams.com/Stock/PSE:' + ticker)
+    url = ('https://edge.pse.com.ph/companyPage/stockData.do?cmpy_id=6')
     content = requests.get(url)
     soup = BeautifulSoup(content.text, 'html.parser')
-    st.text(table)
+    st.text(soup)
     table = soup.find('table', {"class": "table table-hover"})
     data_frame = pd.read_html(str(table))[0]
     data_frame.drop(data_frame.tail(1).index, inplace=True)
