@@ -10,7 +10,7 @@ import streamlit as st
 def getPSEStockData(ticker):
     # Data is scraped of off Investagrams.com depending on specified ticker symbol
     # url = ('https://www.investagrams.com/Stock/PSE:' + ticker)
-    url = ('https://edge.pse.com.ph/companyPage/stockData.do?cmpy_id=6')
+    url = ('https://ph.investing.com/equities/globe-telecom-historical-data')
     content = requests.get(url)
     soup = BeautifulSoup(content.text, 'html.parser')
     st.text(soup)
